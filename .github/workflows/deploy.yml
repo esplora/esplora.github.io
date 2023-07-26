@@ -1,0 +1,46 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Setup PHP 🔧
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          extensions: mbstring, xml
+          coverage: none
+          tools: composer:v2
+
+      - name: Install and Build 🔧
+        run: |
+          composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+
+      - name: Generate
+        env:
+          APP_NAME: Esplora
+          APP_ENV: production
+          APP_KEY: base64:8Jv9H6OMWkWui9VzMwjSiLPfMqRnZGN0PNVUmMc5Dyc=
+          APP_DEBUG: false
+          APP_URL: https://esplora.github.io/
+        run: |
+          php artisan export
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: storage/app/public
