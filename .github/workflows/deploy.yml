@@ -35,6 +35,7 @@ jobs:
           APP_KEY: base64:8Jv9H6OMWkWui9VzMwjSiLPfMqRnZGN0PNVUmMc5Dyc=
           APP_DEBUG: false
           APP_URL: https://esplora.github.io/
+          CACHE_DRIVER: null
         run: |
           php artisan export
 
