@@ -33,9 +33,12 @@ jobs:
           APP_NAME: Esplora
           APP_ENV: production
           APP_KEY: base64:8Jv9H6OMWkWui9VzMwjSiLPfMqRnZGN0PNVUmMc5Dyc=
-          APP_DEBUG: false
+          APP_DEBUG: true
           APP_URL: https://esplora.github.io/
           CACHE_DRIVER: array
+          LOG_CHANNEL: stack
+          LOG_DEPRECATIONS_CHANNEL: null
+          LOG_LEVEL: debug
         run: |
           php artisan export
 
