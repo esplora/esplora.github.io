@@ -23,7 +23,8 @@ Route::get('/', function () {
         'esplora/serenade',
     ])
         ->map(fn($package) => \Illuminate\Support\Facades\Http::get("https://packagist.org/packages/$package.json")
-            ->collect('package')->only(['name', 'description', 'repository', 'github_stars', 'downloads']));
+            ->collect('package')->only(['name', 'description', 'repository', 'github_stars', 'downloads']))
+        ->sortByDesc('github_stars');
 
 
     return view('welcome', ['packages' => $packages]);
