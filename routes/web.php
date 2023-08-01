@@ -20,6 +20,7 @@ Route::get('/', function () {
         'esplora/next-value-predictor',
         'esplora/memento',
         'esplora/auto-login',
+        'esplora/serenade',
     ])
         ->map(fn($package) => \Illuminate\Support\Facades\Http::get("https://packagist.org/packages/$package.json")
             ->collect('package')->only(['name', 'description', 'repository', 'github_stars', 'downloads']));
