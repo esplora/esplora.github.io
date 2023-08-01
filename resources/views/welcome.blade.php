@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-5 d-none d-lg-block">
                     <div class="">
-                        Starts: {{ number_format($package['github_stars']) }}
+                        Stars: {{ number_format($package['github_stars']) }}
                     </div>
                     <hr>
                     <div class="">
