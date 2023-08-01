@@ -37,7 +37,7 @@ jobs:
           APP_URL: https://esplora.github.io/
           CACHE_DRIVER: array
           LOG_CHANNEL: stack
-          LOG_DEPRECATIONS_CHANNEL: null
+          LOG_DEPRECATIONS_CHANNEL: 'null'
           LOG_LEVEL: debug
         run: |
           php artisan export
@@ -45,6 +45,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: storage/app/public
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: gh-pages
+          folder: storage/app/public
