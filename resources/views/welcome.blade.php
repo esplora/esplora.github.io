@@ -79,7 +79,7 @@
 </div>
 
 <div class="container py-5">
-    <div class="col-md-8 mx-auto">
+    <div class="col-md-7 mx-auto">
 
 
         @foreach($packages as $package)
