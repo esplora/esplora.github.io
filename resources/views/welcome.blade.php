@@ -125,7 +125,7 @@
             <li class="nav-item"><a href="https://github.com/esplora" class="nav-link px-2 text-body-secondary">GitHub</a></li>
             <li class="nav-item"><a href="https://packagist.org/packages/esplora/" class="nav-link px-2 text-body-secondary">Packagist</a></li>
         </ul>
-        <p class="text-center text-body-secondary"><span class="text-muted">Esplora:</span> Unveiling a World of Open-Source Exploration and Collaboration!</p>
+        <p class="text-center text-body-secondary small"><span class="text-muted">Esplora:</span> Unveiling a World of Open-Source Exploration and Collaboration!</p>
     </footer>
 </div>
 
