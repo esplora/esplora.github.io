@@ -46,7 +46,7 @@
 </head>
 <body>
 
-<div class="p-5 mb-4 bg-body-tertiary d-flex user-select-none" style="background: url(/poster.png); background-size: cover; background-position: right bottom; height: 810px;">
+<div class="p-5 mb-4 bg-body-tertiary d-flex user-select-none" style="background: url(/poster.png); background-size: cover; background-position: right bottom; height: min(810px, 100vh);">
     <div class="container pt-4 my-auto">
         <div class="col-lg-6">
             <h1 class="display-1 text-logo fw-bold text-white mb-0">Save your time with Esplora’s Laravel packages</h1>
